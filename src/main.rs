@@ -7,13 +7,28 @@ use std::path::Path;
 pub mod domain {
     /// todo documentation
     pub mod model {
-        /// Represents the YAML configuration file provided by the user.
-        pub struct Config {
-            /// Collection of `String` representing the path to a git repository on disk.
-            pub repositories: Vec<String>,
+        /// todo documentation
+        pub mod entity {
+            use std::fs::File;
+            /// Represents the YAML configuration file provided by the user.
+            pub struct Config {
+                /// todo
+                pub config_file: File,
+
+                /// todo
+                pub contexts: Vec<Context>,
+            }
+
+            /// todo documentation
+            pub struct Context {
+                /// Collection of `String` representing the path to a git repository on disk.
+                pub repositories: Vec<String>,
+            }
         }
     }
 }
+
+pub mod service {}
 
 /// todo documentation
 fn main() {
